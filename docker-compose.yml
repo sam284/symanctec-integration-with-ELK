@@ -1,0 +1,11 @@
+  symantec_event_stream:
+    image: symantec-stream
+    container_name: symantec_stream
+    environment:
+      - SYMC_AUTH_HEADER=${SYMC_AUTH_HEADER}
+      - SYMC_STREAM_GUID=${SYMC_STREAM_GUID}
+      - EVENT_TIMEOUT=120
+    volumes:
+      - ../ses_logs:/app/logs
+      - ../ses_output:/app/output
+    mem_limit: 512M
